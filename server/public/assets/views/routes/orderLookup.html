@@ -9,7 +9,7 @@
     <p>User: {{data.ordersArray[0].name}}</p>
     <div class = "orders" ng-repeat = "info in data.ordersArray">
         <p>{{info.order_id}}</p>
-        <p>{{info.amount}}</p>
+        <p>{{info.amount | currency:"$"}}</p>
         <p>{{info.order_date}}</p>
         <p>{{info.address_type}}</p>
         <p>{{info.address_street}}</p>

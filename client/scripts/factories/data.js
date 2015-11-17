@@ -17,7 +17,7 @@ myApp.factory('DataService', ["$http", "$filter", function($http, $filter){
     var retrieveOrders = function(id, startDate, endDate){
         startDate = $filter('date')(startDate, "yyyy-MM-dd");
         endDate = $filter('date')(endDate, "yyyy-MM-dd");
-        console.log(startDate, endDate);
+        //console.log(startDate, endDate);
         $http.get('/data/order', {params:{id: id, start_date:startDate, end_date: endDate}}).then(function(response){
             orders = response.data;
             console.log(orders);

@@ -1,6 +1,5 @@
 
 myApp.controller('HomeController', ["$scope", "DataService", function($scope, DataService){
-    $scope.message = "home page";
     $scope.dataService = DataService;
     $scope.dataService.retrieveNames();
 
@@ -20,7 +19,7 @@ myApp.controller('AddressController', ["$scope", "DataService", function($scope,
 
 }]);
 
-myApp.controller('OrderController', ["$scope", "DataService", function($scope, DataService){
+myApp.controller('OrderController', ["$scope", "DataService", "$filter", function($scope, DataService, $filter){
     $scope.data = {};
     $scope.dataService = DataService;
 
