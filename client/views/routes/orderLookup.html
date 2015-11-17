@@ -1,4 +1,19 @@
 <div class = order-lookup>
-    <p>Order Lookup Page</p>
-    {{message}}
+    <h1>Order Lookup</h1>
+    <select ng-model = "selection" ng-options="person.name for person in data.namesArray"></select>
+    <label for = "start-date">Order Start Date
+    <input id = "start-date" type = "date" ng-model = "startDate"></label>
+    <label for = "end-date">Order End Date
+    <input id = "end-date" type = "date" ng-model = "endDate"></label>
+    <button type = "submit" ng-click="dataService.retrieveOrders(selection.id,startDate, endDate)">Submit</button>
+    <p>User: {{data.ordersArray[0].name}}</p>
+    <div class = "orders" ng-repeat = "info in data.ordersArray">
+        <p>{{info.order_id}}</p>
+        <p>{{info.amount}}</p>
+        <p>{{info.order_date}}</p>
+        <p>{{info.address_type}}</p>
+        <p>{{info.address_street}}</p>
+        <p>{{info.address_state}}</p>
+        <p>{{info.address_zip}}</p>
+    </div>
 </div>
