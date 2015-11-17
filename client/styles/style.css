@@ -1,3 +1,13 @@
+.nav {
+    display:inline;
+    list-style-type: none;
+}
+li {
+    float: left;
+    padding: 5px;
+    min-width: 100px;
+}
+
 .address{
     height: 60px;
     min-width: 100%;

@@ -2,28 +2,28 @@
 myApp.factory('DataService', ["$http", function($http){
     var names, addresses = undefined;
 
-    var getNames = function(){
+    var retrieveNames = function(){
         $http.get('/data/names').then(function(response){
             names = response.data;
             console.log(names);
         })
     };
-    var getAddresses = function(selection){
+    var retrieveAddresses = function(selection){
         $http.get('/data/address', {params: {name: selection.name, id: selection.id}}).then(function(response){
             addresses = response.data;
-            console.log(addresses);
+            //console.log(addresses);
         });
         };
 
     var orderApi = {
         retrieveNames: function(){
-            getNames();
+            retrieveNames();
         },
         displayNames: function(){
             return names;
         },
         retrieveAddresses: function(selection){
-            getAddresses(selection);
+            retrieveAddresses(selection);
         },
         displayAddresses: function(){
             return addresses;

@@ -4,7 +4,7 @@
             <!--ng-change = "dataService.retrieveAddresses(selection)"></select>-->
     <select ng-model = "selection" ng-options="person.name for person in data.namesArray"
             ng-change = "dataService.retrieveAddresses(selection)"></select>
-    <div class = "name-address"><p>Username: {{data.addresses[0].name}}</p>
+    <div class = "name-address"><p>User: {{data.addresses[0].name}}</p>
         <div class = "address" ng-repeat="info in data.addresses">
             <p>{{info.address_type}}</p>
             <p>{{info.address_street}}</p>
