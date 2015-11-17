@@ -1,0 +1,9 @@
+.address{
+    height: 60px;
+    min-width: 100%;
+}
+.address p {
+    float:left;
+    min-width: 180px;
+    padding: 5px;
+}

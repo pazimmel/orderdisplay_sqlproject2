@@ -9,7 +9,6 @@ myApp.factory('DataService', ["$http", function($http){
         })
     };
     var getAddresses = function(selection){
-        console.log("hi there");
         $http.get('/data/address', {params: {name: selection.name, id: selection.id}}).then(function(response){
             addresses = response.data;
             console.log(addresses);
@@ -26,7 +25,7 @@ myApp.factory('DataService', ["$http", function($http){
         retrieveAddresses: function(selection){
             getAddresses(selection);
         },
-        displayAdresses: function(){
+        displayAddresses: function(){
             return addresses;
         }
 
